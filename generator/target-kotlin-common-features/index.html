@@ -1,0 +1,1778 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>Sunday - Generator - Targets - Common Kotlin Target Features - Sunday</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#common-kotlin-target-features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+<header class="md-header" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="https://outfoxx.io"
+      title="Sunday"
+      class="md-header__button md-logo"
+      aria-label="Sunday"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sunday 🙏 The framework of REST
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sunday - Generator - Targets - Common Kotlin Target Features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+  </nav>
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://outfoxx.io" title="Sunday" class="md-nav__button md-logo" aria-label="Sunday" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Sunday
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      <label class="md-nav__link" for="__nav_1_2">
+        Features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/" class="md-nav__link">
+        Detailed Error Responses via Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-sent-events/" class="md-nav__link">
+        Efficient Notifications via Server-Sent Events
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dynamic-content-type-negotiation/" class="md-nav__link">
+        Dynamic Content-Type Negotation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alternative-request-response-encodings/" class="md-nav__link">
+        Alternative Request/Response Encodings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../date-time-data-types/" class="md-nav__link">
+        Date/Time Data Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client-code/" class="md-nav__link">
+        Simple & Beautiful Code
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Generator
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Generator" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Generator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        RAML
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="RAML" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          RAML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-raml/" class="md-nav__link">
+        Why?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raml-extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Targets
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Targets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Targets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-common-features/" class="md-nav__link">
+        Common Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3_2">
+        Kotlin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Kotlin" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Common Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Common Features
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generated-types" class="md-nav__link">
+    Generated Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalars" class="md-nav__link">
+    Scalars
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerics" class="md-nav__link">
+    Numerics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-classes" class="md-nav__link">
+    Model Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-interfaces" class="md-nav__link">
+    Model Interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-objects" class="md-nav__link">
+    Simple Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-objects" class="md-nav__link">
+    Pattern Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jackson-annotations" class="md-nav__link">
+    Jackson Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bean-validation-constraints" class="md-nav__link">
+    Bean Validation Constraints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unions" class="md-nav__link">
+    Unions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-problem-types" class="md-nav__link">
+    Generated Problem Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator-options" class="md-nav__link">
+    Generator Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Generator Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-options" class="md-nav__link">
+    Supported Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin-sunday/" class="md-nav__link">
+        Sunday
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin-jaxrs/" class="md-nav__link">
+        JAX-RS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3_3">
+        Swift
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Swift" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Swift
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-swift-common-features/" class="md-nav__link">
+        Common Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swift-sunday/" class="md-nav__link">
+        Sunday
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" type="checkbox" id="__nav_2_3_4" >
+      
+      <label class="md-nav__link" for="__nav_2_3_4">
+        TypeScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TypeScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-typescript-common-features/" class="md-nav__link">
+        Common Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-sunday/" class="md-nav__link">
+        Sunday
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Client Libraries
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Client Libraries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Client Libraries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Swift Package
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Swift Package" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Swift Package
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-swift/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Kotlin Library
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Kotlin Library" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-kotlin/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-kotlin/api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        TypeScript Package
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TypeScript Package" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript Package
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-js/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generated-types" class="md-nav__link">
+    Generated Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalars" class="md-nav__link">
+    Scalars
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerics" class="md-nav__link">
+    Numerics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-classes" class="md-nav__link">
+    Model Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-interfaces" class="md-nav__link">
+    Model Interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-objects" class="md-nav__link">
+    Simple Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-objects" class="md-nav__link">
+    Pattern Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jackson-annotations" class="md-nav__link">
+    Jackson Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bean-validation-constraints" class="md-nav__link">
+    Bean Validation Constraints
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unions" class="md-nav__link">
+    Unions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-problem-types" class="md-nav__link">
+    Generated Problem Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator-options" class="md-nav__link">
+    Generator Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Generator Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-options" class="md-nav__link">
+    Supported Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="common-kotlin-target-features">Common Kotlin Target Features</h1>
+<p>The following features are supported by all Kotlin code generation targets.</p>
+<h2 id="generated-types">Generated Types</h2>
+<h3 id="scalars">Scalars</h3>
+<p>RAML built-in scalar types are mapped according to the following table.</p>
+<table>
+<thead>
+<tr>
+<th align="center">RAML Type</th>
+<th align="center">Kotlin Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">any</td>
+<td align="center">Any</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+<tr>
+<td align="center">number / integer</td>
+<td align="center"><a href="#numerics">Numerics</a></td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">String</td>
+</tr>
+<tr>
+<td align="center">date-only</td>
+<td align="center">java.time.LocalDate</td>
+</tr>
+<tr>
+<td align="center">time-only</td>
+<td align="center">java.time.LocalTime</td>
+</tr>
+<tr>
+<td align="center">datetime-only</td>
+<td align="center">java.time.LocalDateTime</td>
+</tr>
+<tr>
+<td align="center">datetime</td>
+<td align="center">java.time.OffsetDateTime</td>
+</tr>
+<tr>
+<td align="center">file</td>
+<td align="center">ByteArray</td>
+</tr>
+<tr>
+<td align="center">nil</td>
+<td align="center">Unit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="numerics">Numerics</h4>
+<p>RAML <code>number</code> and <code>integer</code> types are mapped to one of Kotlins's numeric types based on the <code>format</code> facet.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Format</th>
+<th align="center">Kotlin Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>int</code></td>
+<td align="center">Int</td>
+</tr>
+<tr>
+<td align="center"><code>int8</code></td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center"><code>int16</code></td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center"><code>int32</code></td>
+<td align="center">Int</td>
+</tr>
+<tr>
+<td align="center"><code>int64</code></td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center"><code>long</code></td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center"><code>float</code></td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center"><code>double</code></td>
+<td align="center">Double</td>
+</tr>
+</tbody>
+</table>
+<h3 id="objects">Objects</h3>
+<p>For each RAML type that is an <code>object</code> or where the root of the inheritance tree is an <code>object</code> a Kotlin class or interface is generated.</p>
+<h4 id="model-classes">Model Classes</h4>
+<p>When the generation of model implementations is enabled (<a href="#type-generation-options">Implement Model Classes - Type Generation Option</a>) a POJO class is generated for each required type that supports copying, equals/hashcode, toString, etc.</p>
+<details class="example"><summary>Example Class Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Class</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Item</span><span class="p">(</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">fun</span> <span class="nf">copy</span><span class="p">(</span>
+    <span class="n">name</span><span class="p">:</span> <span class="kt">String?</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="n">value</span><span class="p">:</span> <span class="kt">Int?</span><span class="o">?</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="p">)</span> <span class="o">=</span> <span class="n">Test</span><span class="p">(</span><span class="n">name</span> <span class="o">?:</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">,</span> <span class="n">value</span> <span class="o">?:</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">)</span>
+
+  <span class="kd">public</span> <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">hashCode</span><span class="p">():</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="m">1</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="m">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">name</span><span class="p">.</span><span class="na">hashCode</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="m">31</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="n">value</span><span class="p">.</span><span class="na">hashCode</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">equals</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="kt">Any?</span><span class="p">):</span> <span class="kt">Boolean</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">===</span> <span class="n">other</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">javaClass</span> <span class="o">!=</span> <span class="n">other</span><span class="o">?.</span><span class="na">javaClass</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span>
+
+    <span class="n">other</span> <span class="k">as</span> <span class="n">Test</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="n">other</span><span class="p">.</span><span class="na">name</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="n">other</span><span class="p">.</span><span class="na">value</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">toString</span><span class="p">()</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="err">$</span><span class="p">{</span><span class="sc">&#39;&quot;&#39;</span><span class="p">}</span>
+  <span class="o">|</span><span class="n">Test</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;$</span><span class="p">{</span><span class="sc">&#39;$&#39;</span><span class="p">}</span><span class="n">name</span><span class="err">&#39;</span><span class="p">,</span>
+  <span class="o">|</span> <span class="n">value</span><span class="o">=</span><span class="err">&#39;$</span><span class="p">{</span><span class="sc">&#39;$&#39;</span><span class="p">}</span><span class="n">value</span>
+  <span class="s">&quot;&quot;</span><span class="err">$</span><span class="p">{</span><span class="sc">&#39;&quot;&#39;</span><span class="p">}.</span><span class="na">trimMargin</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Why not data classes?</p>
+<p>The generator currently does not gnerate Kotlin data classes to ensure easy support for generating type hierarchies. Similar features to those of data classes are generated for each class.</p>
+</div>
+<h4 id="model-interfaces">Model Interfaces</h4>
+<p>When the generation of model implementations is disabled (<a href="#type-generation-options">Implement Model Classes - Type Generation Option</a>) interfaces are generated for each required types.</p>
+<details class="example"><summary>Example Interface Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Interface</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Item</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h4 id="simple-objects">Simple Objects</h4>
+<p>RAML types that are "simple" objects (where no <code>properties</code> facet is defined) are mapped to Kotlin maps (i.e. <code>Map&lt;String, Any&gt;</code>). They are generated inline and no type aliases are generated.</p>
+<details class="example"><summary>Example Simple Object Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">map</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Container</span><span class="p">(</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">map</span><span class="p">:</span> <span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Any</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</code></pre></div></p>
+</details>
+<h4 id="pattern-objects">Pattern Objects</h4>
+<p>RAML types that only contain pattern properties (i.e. property names defined by regular expressions) are mapped to Kotlin maps with the key as a string and the value as the type specified in the pattern (e.g. <code>Map&lt;String: Int&gt;</code>). They are generated inline and no type aliases are generated.</p>
+<details class="example"><summary>Example Pattern Object Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">MapOfInts</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+      <span class="l l-Scalar l-Scalar-Plain">//</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">map</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MapOfInts</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Container</span><span class="p">(</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">map</span><span class="p">:</span> <span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</code></pre></div></p>
+</details>
+<h4 id="jackson-annotations">Jackson Annotations</h4>
+<p>The generator defaults to adding Jackson JSON serialization annotations to the generated classes and interfaces. This enables advanced JSON features (e.g. polymorphism, explicit naming, etc.) to be supported without editing the generated types or registering mixins.</p>
+<details class="example"><summary>Example Jackson Annotations Generation (Explicit Names)</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">simple-name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Class</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Item</span><span class="p">(</span>
+  <span class="nd">@JacksonProperty</span><span class="p">(</span><span class="s">&quot;simple-name&quot;</span><span class="p">)</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">simpleName</span><span class="p">:</span> <span class="kt">String</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">)</span>
+</code></pre></div></p>
+</details>
+<details class="example"><summary>Example Jackson Annotations Generation (Polymorphism)</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Device</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">discriminator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+
+  <span class="nt">Phone</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">phone</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">hasGPS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
+  <span class="nt">Tablet</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tablet</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">isKeyboardAttached</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Classes</strong>
+<div class="highlight"><pre><span></span><code><span class="nd">@JsonTypeInfo</span><span class="p">(</span>
+  <span class="n">use</span> <span class="o">=</span> <span class="n">JsonTypeInfo</span><span class="p">.</span><span class="na">Id</span><span class="p">.</span><span class="na">NAME</span><span class="p">,</span>
+  <span class="n">include</span> <span class="o">=</span> <span class="n">JsonTypeInfo</span><span class="p">.</span><span class="na">As</span><span class="p">.</span><span class="na">EXISTING_PROPERTY</span><span class="p">,</span>
+  <span class="n">property</span> <span class="o">=</span> <span class="s">&quot;type&quot;</span>
+<span class="p">)</span>
+<span class="nd">@JsonSubTypes</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="n">JsonSubTypes</span><span class="p">.</span><span class="na">Type</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;phone&quot;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Phone</span><span class="o">::</span><span class="n">class</span><span class="p">),</span>
+  <span class="n">JsonSubTypes</span><span class="p">.</span><span class="na">Type</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;tablet&quot;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Tablet</span><span class="o">::</span><span class="n">class</span><span class="p">)</span>
+<span class="o">]</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Device</span><span class="p">(</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">)</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">val</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Phone</span><span class="p">(</span>
+  <span class="n">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">hasGPS</span><span class="p">:</span> <span class="kt">Boolean</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">Device</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kd">val</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span> <span class="k">get</span><span class="p">()</span> <span class="o">=</span> <span class="s">&quot;phone&quot;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tablet</span><span class="p">(</span>
+  <span class="n">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">isKeyboardAttached</span><span class="p">:</span> <span class="kt">Boolean</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">Device</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kd">val</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span> <span class="k">get</span><span class="p">()</span> <span class="o">=</span> <span class="s">&quot;tablet&quot;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The generation of Jackson annotations can be disabled via the <a href="#type-generation-options">Jackson Annotations - Type Generation Option</a>.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Disabling Jackson will most likely require a custom (de)serialization implementation to support the full feature set.</p>
+</div>
+<h4 id="bean-validation-constraints">Bean Validation Constraints</h4>
+<p>The generator defaults to adding Bean Validation Constraints to validate instance data as they are serialized/deserialized.</p>
+<details class="example"><summary>Example Validation Constraints Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">id</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+        <span class="nt">pattern</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">a-zA-Z0-9</span><span class="p p-Indicator">]</span><span class="l l-Scalar l-Scalar-Plain">+</span>
+      <span class="nt">value</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="nt">minimum</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+        <span class="nt">maximum</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Class</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Item</span><span class="p">(</span>
+
+  <span class="nd">@Pattern</span><span class="p">(</span><span class="s">&quot;[a-zA-Z0-9]+&quot;</span><span class="p">)</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+
+  <span class="nd">@Min</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="nd">@Max</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The generation of validation constraints can be disabled via the <a href="#type-generation-options">Validation Constraints - Type Generation Option</a></p>
+</div>
+<h3 id="arrays">Arrays</h3>
+<p>RAML array types are mapped to Kotlin's <code>List</code> type. They are generated inline and no type aliases are generated.</p>
+<details class="example"><summary>Example Array Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+
+  <span class="nt">Items</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+    <span class="nt">items</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Item</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Items</span>
+</code></pre></div></p>
+<p><strong>Generated Kotlin Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Container</span><span class="p">(</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">items</span><span class="p">:</span> <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</code></pre></div></p>
+</details>
+<h3 id="unions">Unions</h3>
+<p>RAML union types are mapped to the "nearest common ancestor" of all individual types in the union, if one exists, in all other cases the union is mapped to Kotlin's <code>Any</code> type.</p>
+<details class="example"><summary>Example Union Generation (Common Aancestor)</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Device</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">discriminator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+
+  <span class="nt">Phone</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">phone</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">hasGPS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
+  <span class="nt">Tablet</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tablet</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">isKeyboardAttached</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
+  <span class="nt">UnionOfAllDevices</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(Phone | Tablet)</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">device</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UnionOfAllDevices</span>
+</code></pre></div></p>
+<ol>
+<li>Inline union of types with a common ancestor.</li>
+</ol>
+<p><strong>Generated Kotlin Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Container</span><span class="p">(</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">device</span><span class="p">:</span> <span class="n">Device</span>
+<span class="p">)</span>
+</code></pre></div></p>
+</details>
+<h2 id="generated-problem-types">Generated Problem Types</h2>
+<p>For each problem defined &amp; referenced using Sunday's <a href="../raml-extensions/#problem-annotations">problem annotations</a>, a Kotlin <code>Exception</code> class is generated. Generating exceptions allows servers to throw a specific problem and clients to catch specific problems.</p>
+<p>Custom properties can be defined for problem types and they are added as simple Kotlin properties on the generated exception class.</p>
+<details class="example"><summary>Example Problem Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">uses</span><span class="p">:</span>
+    <span class="nt">sunday</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://outfoxx.github.io/sunday-generator/sunday.raml</span>
+<span class="nt">types</span><span class="p">:</span>
+
+<span class="nt">(sunday.problemTypes)</span><span class="p">:</span>
+  <span class="nt">invalid_id</span><span class="p">:</span>
+    <span class="nt">status</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">400</span>
+    <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Invalid Id</span>
+    <span class="nt">detail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The id contains one or more invalid characters</span>
+    <span class="nt">custom</span><span class="p">:</span>
+      <span class="nt">offendingId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+</code></pre></div></p>
+<p><strong>Generated Problem Exception Class</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InvalidIdProblem</span><span class="p">(</span>
+  <span class="nd">@JsonProperty</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;offending_id&quot;</span><span class="p">)</span>
+  <span class="kd">public</span> <span class="kd">val</span> <span class="nv">offendingId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="n">instance</span><span class="p">:</span> <span class="n">URI? </span><span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="n">cause</span><span class="p">:</span> <span class="n">ThrowableProblem? </span><span class="o">=</span> <span class="kc">null</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">AbstractThrowableProblem</span><span class="p">(</span><span class="n">TYPE_URI</span><span class="p">,</span> <span class="s">&quot;Invalid Id&quot;</span><span class="p">,</span> <span class="n">Status</span><span class="p">.</span><span class="na">BAD_REQUEST</span><span class="p">,</span>
+    <span class="s">&quot;The id contains one or more invalid characters.&quot;</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">cause</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">getCause</span><span class="p">():</span> <span class="n">Exceptional? </span><span class="o">=</span> <span class="k">super</span><span class="p">.</span><span class="na">cause</span>
+
+  <span class="kd">public</span> <span class="kd">companion</span> <span class="kd">object</span> <span class="err">{</span>
+    <span class="kd">public</span> <span class="kd">const</span> <span class="kd">val</span> <span class="nv">TYPE</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;http://example.com/invalid_id&quot;</span>
+
+    <span class="kd">public</span> <span class="kd">val</span> <span class="nv">TYPE_URI</span><span class="p">:</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">URI</span><span class="p">(</span><span class="n">TYPE</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h2 id="generator-options">Generator Options</h2>
+<p>In addition to the <a href="../target-common-features/#generator-options">options supported by all code generations targets</a>, this target also supports the following options:</p>
+<dl>
+<dt><strong>Default Package Name</strong></dt>
+<dd>
+<p>Specifies the default Kotlin package name for model types and service types.</p>
+<table>
+<thead>
+<tr>
+<th>CLI Option</th>
+<th>Gradle Plugin Properties</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-pkg</code></td>
+<td><code>pkgName</code></td>
+<td>string</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><strong>Default Model Package Name</strong></dt>
+<dd>
+<p>Specifies the default Kotlin package name for model types.</p>
+<table>
+<thead>
+<tr>
+<th>CLI Option</th>
+<th>Gradle Plugin Properties</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-model-pkg</code></td>
+<td><code>modelPkgName</code></td>
+<td>string</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified the value specified in <code>-pkg</code> is used.</p>
+</div>
+</dd>
+<dt><strong>Default Service Package Name</strong></dt>
+<dd>
+<p>Specifies the default Kotlin package name for service types.</p>
+<table>
+<thead>
+<tr>
+<th>CLI Option</th>
+<th>Gradle Plugin Properties</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-service-pkg</code></td>
+<td><code>servicePkgName</code></td>
+<td>string</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified the value specified in <code>-pkg</code> is used.</p>
+</div>
+</dd>
+</dl>
+<p><a name="type-generation-options"></a></p>
+<dl>
+<dt><strong>Type Generation Options</strong></dt>
+<dd>
+<p>Enable/Disable Kotlin type generation options.</p>
+<h5 id="supported-options">Supported Options</h5>
+<dl>
+<dt><strong>Implement Model Classes</strong></dt>
+<dd>Enables or Disables implementation of model classes</dd>
+<dt><strong>Jackson Annotations</strong></dt>
+<dd>Enables or Disables generation of Jackson annotations </dd>
+<dt><strong>Validation Constraints</strong></dt>
+<dd>Enables or Disables generation of bean validation annotations</dd>
+</dl>
+<table>
+<thead>
+<tr>
+<th>CLI Option</th>
+<th>Gradle Plugin Properties</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-disable implement-model</code></td>
+<td><code>disableModelImplementations</code></td>
+<td>boolean</td>
+<td>enabled</td>
+</tr>
+<tr>
+<td><code>-disable jackson-annotations</code></td>
+<td><code>disableJacksonAnnotations</code></td>
+<td>boolean</td>
+<td>enabled</td>
+</tr>
+<tr>
+<td><code>-disable validation-constraints</code></td>
+<td><code>disableValidationConstraints</code></td>
+<td>boolean</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../target-common-features/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Common Features
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../kotlin-sunday/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sunday
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Outfox, Inc.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+  </body>
+</html>

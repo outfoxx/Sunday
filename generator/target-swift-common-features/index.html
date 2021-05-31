@@ -1,0 +1,1768 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>Sunday - Generator - Targets - Common Swift Target Features - Sunday</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#common-swift-target-features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+<header class="md-header" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="https://outfoxx.io"
+      title="Sunday"
+      class="md-header__button md-logo"
+      aria-label="Sunday"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sunday 🙏 The framework of REST
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sunday - Generator - Targets - Common Swift Target Features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+  </nav>
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://outfoxx.io" title="Sunday" class="md-nav__button md-logo" aria-label="Sunday" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Sunday
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      <label class="md-nav__link" for="__nav_1_2">
+        Features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems/" class="md-nav__link">
+        Detailed Error Responses via Problems
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../server-sent-events/" class="md-nav__link">
+        Efficient Notifications via Server-Sent Events
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dynamic-content-type-negotiation/" class="md-nav__link">
+        Dynamic Content-Type Negotation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alternative-request-response-encodings/" class="md-nav__link">
+        Alternative Request/Response Encodings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../date-time-data-types/" class="md-nav__link">
+        Date/Time Data Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client-code/" class="md-nav__link">
+        Simple & Beautiful Code
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Generator
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Generator" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Generator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        RAML
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="RAML" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          RAML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-raml/" class="md-nav__link">
+        Why?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raml-extensions/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Targets
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Targets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Targets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-common-features/" class="md-nav__link">
+        Common Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_2" type="checkbox" id="__nav_2_3_2" >
+      
+      <label class="md-nav__link" for="__nav_2_3_2">
+        Kotlin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Kotlin" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-kotlin-common-features/" class="md-nav__link">
+        Common Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin-sunday/" class="md-nav__link">
+        Sunday
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kotlin-jaxrs/" class="md-nav__link">
+        JAX-RS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_3" type="checkbox" id="__nav_2_3_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3_3">
+        Swift
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Swift" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Swift
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Common Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Common Features
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generated-types" class="md-nav__link">
+    Generated Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalars" class="md-nav__link">
+    Scalars
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerics" class="md-nav__link">
+    Numerics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inherited-objects" class="md-nav__link">
+    Inherited Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-objects" class="md-nav__link">
+    Simple Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-objects" class="md-nav__link">
+    Pattern Objects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unions" class="md-nav__link">
+    Unions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-problem-types" class="md-nav__link">
+    Generated Problem Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator-options" class="md-nav__link">
+    Generator Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Generator Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-options" class="md-nav__link">
+    Supported Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swift-sunday/" class="md-nav__link">
+        Sunday
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3_4" type="checkbox" id="__nav_2_3_4" >
+      
+      <label class="md-nav__link" for="__nav_2_3_4">
+        TypeScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TypeScript" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-typescript-common-features/" class="md-nav__link">
+        Common Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-sunday/" class="md-nav__link">
+        Sunday
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Client Libraries
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Client Libraries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Client Libraries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Swift Package
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Swift Package" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Swift Package
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-swift/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Kotlin Library
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Kotlin Library" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kotlin Library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-kotlin/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-kotlin/api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        TypeScript Package
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TypeScript Package" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          TypeScript Package
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunday-js/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generated-types" class="md-nav__link">
+    Generated Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Generated Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalars" class="md-nav__link">
+    Scalars
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerics" class="md-nav__link">
+    Numerics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inherited-objects" class="md-nav__link">
+    Inherited Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-objects" class="md-nav__link">
+    Simple Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-objects" class="md-nav__link">
+    Pattern Objects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unions" class="md-nav__link">
+    Unions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-problem-types" class="md-nav__link">
+    Generated Problem Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator-options" class="md-nav__link">
+    Generator Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Generator Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-options" class="md-nav__link">
+    Supported Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="common-swift-target-features">Common Swift Target Features</h1>
+<p>The following features are supported by all Swift code generation targets.</p>
+<h2 id="generated-types">Generated Types</h2>
+<h3 id="scalars">Scalars</h3>
+<p>RAML built-in scalar types are mapped according to the following table.</p>
+<table>
+<thead>
+<tr>
+<th align="center">RAML Type</th>
+<th align="center">Swift Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">any</td>
+<td align="center">Any</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+<tr>
+<td align="center">number / integer</td>
+<td align="center"><a href="#numerics">Numerics</a></td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">String</td>
+</tr>
+<tr>
+<td align="center">date-only</td>
+<td align="center">Date</td>
+</tr>
+<tr>
+<td align="center">time-only</td>
+<td align="center">Date</td>
+</tr>
+<tr>
+<td align="center">datetime-only</td>
+<td align="center">Date</td>
+</tr>
+<tr>
+<td align="center">datetime</td>
+<td align="center">Date</td>
+</tr>
+<tr>
+<td align="center">file</td>
+<td align="center">Data</td>
+</tr>
+<tr>
+<td align="center">nil</td>
+<td align="center">Optional.none (aka <code>nil</code>)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="numerics">Numerics</h4>
+<p>RAML <code>number</code> and <code>integer</code> types are mapped to one of Swift's numeric types based on the <code>format</code> facet.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Format</th>
+<th align="center">Swift Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>int</code></td>
+<td align="center">Int</td>
+</tr>
+<tr>
+<td align="center"><code>int8</code></td>
+<td align="center">Int8</td>
+</tr>
+<tr>
+<td align="center"><code>int16</code></td>
+<td align="center">Int16</td>
+</tr>
+<tr>
+<td align="center"><code>int32</code></td>
+<td align="center">Int32</td>
+</tr>
+<tr>
+<td align="center"><code>int64</code></td>
+<td align="center">Int64</td>
+</tr>
+<tr>
+<td align="center"><code>long</code></td>
+<td align="center">Int64</td>
+</tr>
+<tr>
+<td align="center"><code>float</code></td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center"><code>double</code></td>
+<td align="center">Double</td>
+</tr>
+</tbody>
+</table>
+<h3 id="objects">Objects</h3>
+<p>For each RAML type that is an <code>object</code> or where the root of the inheritance tree is an <code>object</code> and contains any defined properties, a Swift class is generated.</p>
+<p>Generated classes are immutable and fluent modifier functions are generated for each property defined on the type.</p>
+<p>Each generated class implements <code>Codable</code> and <code>CustomDebugStringConvertible</code>. It's left up to the users to implement other Swift standard protocols like <code>Equatable</code> and/or <code>Hashable</code>.</p>
+<details class="example"><summary>Example Class Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+</code></pre></div></p>
+<p><strong>Generated Swift Class</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Item</span> <span class="p">:</span> <span class="n">Codable</span><span class="p">,</span> <span class="n">CustomDebugStringConvertible</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+  <span class="kd">public</span> <span class="kd">let</span> <span class="nv">value</span><span class="p">:</span> <span class="nb">Int</span>
+  <span class="kd">public</span> <span class="kd">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DescriptionBuilder</span><span class="p">(</span><span class="n">Test</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;name&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="n">value</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">required</span> <span class="kd">init</span><span class="p">(</span><span class="n">from</span> <span class="n">decoder</span><span class="p">:</span> <span class="n">Decoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">value</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="nb">Int</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">value</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="n">encoder</span><span class="p">:</span> <span class="n">Encoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">container</span> <span class="p">=</span> <span class="n">encoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">value</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">withName</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Test</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Test</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">value</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">withValue</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Test</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Test</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">value</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="n">fileprivate</span> <span class="kd">enum</span> <span class="nc">CodingKeys</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">CodingKey</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="n">name</span> <span class="p">=</span> <span class="s">&quot;name&quot;</span>
+    <span class="k">case</span> <span class="n">value</span> <span class="p">=</span> <span class="s">&quot;value&quot;</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h4 id="inherited-objects">Inherited Objects</h4>
+<p>RAML types that inherit from a single parent type are generated as a class hierarchy.</p>
+<p>As long as each type in the hierarchy only inherits from a single parent type the hierarch can be as complex as the author requires.</p>
+<p>When the root of the RAML hierarchy has the <code>discriminator</code> facet set, the generated class hierarchy will support polymorphic decoding using a nested reference object named <code>AnyRef</code>.</p>
+<details class="example"><summary>Example Class Hierarchy Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Device</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">discriminator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+
+  <span class="nt">Phone</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">phone</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">hasGPS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
+  <span class="nt">Tablet</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tablet</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">isKeyboardAttached</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+</code></pre></div></p>
+<p><strong>Generated Swift Classes</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Device</span> <span class="p">:</span> <span class="n">Codable</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">var</span> <span class="nv">type</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;abstract type method&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+  <span class="kd">public</span> <span class="kd">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DescriptionBuilder</span><span class="p">(</span><span class="n">Device</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">required</span> <span class="kd">init</span><span class="p">(</span><span class="n">from</span> <span class="n">decoder</span><span class="p">:</span> <span class="n">Decoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">name</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="n">encoder</span><span class="p">:</span> <span class="n">Encoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nv">container</span> <span class="p">=</span> <span class="n">encoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">name</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="nc">AnyRef</span> <span class="p">:</span> <span class="n">Codable</span><span class="p">,</span> <span class="n">CustomDebugStringConvertible</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="n">phone</span><span class="p">(</span><span class="n">Phone</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">tablet</span><span class="p">(</span><span class="n">Tablet</span><span class="p">)</span>
+
+    <span class="kd">public</span> <span class="kd">var</span> <span class="nv">value</span><span class="p">:</span> <span class="n">Device</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="kc">self</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">phone</span><span class="p">(</span><span class="kd">let</span> <span class="nv">value</span><span class="p">):</span> <span class="k">return</span> <span class="n">value</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">tablet</span><span class="p">(</span><span class="kd">let</span> <span class="nv">value</span><span class="p">):</span> <span class="k">return</span> <span class="n">value</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="kc">self</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">phone</span><span class="p">(</span><span class="kd">let</span> <span class="nv">value</span><span class="p">):</span> <span class="k">return</span> <span class="n">value</span><span class="p">.</span><span class="n">debugDescription</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">tablet</span><span class="p">(</span><span class="kd">let</span> <span class="nv">value</span><span class="p">):</span> <span class="k">return</span> <span class="n">value</span><span class="p">.</span><span class="n">debugDescription</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">init</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Device</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="n">value</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="kd">let</span> <span class="nv">value</span> <span class="k">as</span> <span class="n">Phone</span><span class="p">:</span> <span class="kc">self</span> <span class="p">=</span> <span class="p">.</span><span class="n">phone</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+      <span class="k">case</span> <span class="kd">let</span> <span class="nv">value</span> <span class="k">as</span> <span class="n">Tablet</span><span class="p">:</span> <span class="kc">self</span> <span class="p">=</span> <span class="p">.</span><span class="n">tablet</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+      <span class="k">default</span><span class="p">:</span> <span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;Invalid value type&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">init</span><span class="p">(</span><span class="n">from</span> <span class="n">decoder</span><span class="p">:</span> <span class="n">Decoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+      <span class="kd">let</span> <span class="nv">type</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="n">type</span><span class="p">)</span>
+      <span class="k">switch</span> <span class="n">type</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="s">&quot;phone&quot;</span><span class="p">:</span> <span class="kc">self</span> <span class="p">=</span> <span class="p">.</span><span class="n">phone</span><span class="p">(</span><span class="k">try</span> <span class="n">Phone</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">decoder</span><span class="p">))</span>
+      <span class="k">case</span> <span class="s">&quot;tablet&quot;</span><span class="p">:</span> <span class="kc">self</span> <span class="p">=</span> <span class="p">.</span><span class="n">tablet</span><span class="p">(</span><span class="k">try</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">decoder</span><span class="p">))</span>
+      <span class="k">default</span><span class="p">:</span>
+          <span class="k">throw</span> <span class="n">DecodingError</span><span class="p">.</span><span class="n">dataCorruptedError</span><span class="p">(</span>
+            <span class="n">forKey</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="n">type</span><span class="p">,</span>
+            <span class="k">in</span><span class="p">:</span> <span class="n">container</span><span class="p">,</span>
+            <span class="n">debugDescription</span><span class="p">:</span> <span class="s">&quot;unsupported value for </span><span class="se">\&quot;</span><span class="s">type</span><span class="se">\&quot;</span><span class="s">&quot;</span>
+          <span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="n">encoder</span><span class="p">:</span> <span class="n">Encoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nv">container</span> <span class="p">=</span> <span class="n">encoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+      <span class="k">switch</span> <span class="kc">self</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">phone</span><span class="p">(</span><span class="kd">let</span> <span class="nv">value</span><span class="p">):</span>
+          <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;phone&quot;</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">type</span><span class="p">)</span>
+          <span class="k">try</span> <span class="n">value</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="n">encoder</span><span class="p">)</span>
+      <span class="k">case</span> <span class="p">.</span><span class="n">tablet</span><span class="p">(</span><span class="kd">let</span> <span class="nv">value</span><span class="p">):</span>
+          <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;tablet&quot;</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">type</span><span class="p">)</span>
+          <span class="k">try</span> <span class="n">value</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="n">encoder</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+  <span class="p">}</span>
+
+  <span class="n">fileprivate</span> <span class="kd">enum</span> <span class="nc">CodingKeys</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">CodingKey</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="n">type</span> <span class="p">=</span> <span class="s">&quot;type&quot;</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Phone</span> <span class="p">:</span> <span class="n">Parent</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">var</span> <span class="nv">type</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;phone&quot;</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kd">let</span> <span class="nv">hasGPS</span><span class="p">:</span> <span class="n">Boolean</span>
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DescriptionBuilder</span><span class="p">(</span><span class="n">Phone</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;type&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;name&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">hasGPS</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;hasGPS&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">hasGPS</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">hasGPS</span> <span class="p">=</span> <span class="n">hasGPS</span>
+    <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">required</span> <span class="kd">init</span><span class="p">(</span><span class="n">from</span> <span class="n">decoder</span><span class="p">:</span> <span class="n">Decoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">hasGPS</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">Boolean</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">hasGPS</span><span class="p">)</span>
+    <span class="k">try</span> <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">decoder</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="n">encoder</span><span class="p">:</span> <span class="n">Encoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="kc">super</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="n">encoder</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nv">container</span> <span class="p">=</span> <span class="n">encoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">hasGPS</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">hasGPS</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">withName</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Phone</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Phone</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">isKeyboardAttached</span><span class="p">:</span> <span class="n">isKeyboardAttached</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">withHasGPS</span><span class="p">(</span><span class="n">hasGPS</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Phone</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Phone</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">hasGPS</span><span class="p">:</span> <span class="n">hasGPS</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="n">fileprivate</span> <span class="kd">enum</span> <span class="nc">CodingKeys</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">CodingKey</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="n">hasGPS</span> <span class="p">=</span> <span class="s">&quot;hasGPS&quot;</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Tablet</span> <span class="p">:</span> <span class="n">Parent</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">var</span> <span class="nv">type</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;tablet&quot;</span>
+  <span class="p">}</span>
+  <span class="kd">public</span> <span class="kd">let</span> <span class="nv">isKeyboardAttached</span><span class="p">:</span> <span class="n">Boolean</span>
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DescriptionBuilder</span><span class="p">(</span><span class="n">Tablet</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;type&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;name&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">isKeyboardAttached</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;isKeyboardAttached&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">isKeyboardAttached</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">isKeyboardAttached</span> <span class="p">=</span> <span class="n">isKeyboardAttached</span>
+    <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">required</span> <span class="kd">init</span><span class="p">(</span><span class="n">from</span> <span class="n">decoder</span><span class="p">:</span> <span class="n">Decoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">isKeyboardAttached</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">Boolean</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">isKeyboardAttached</span><span class="p">)</span>
+    <span class="k">try</span> <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">decoder</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="n">encoder</span><span class="p">:</span> <span class="n">Encoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="kc">super</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="n">encoder</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nv">container</span> <span class="p">=</span> <span class="n">encoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">isKeyboardAttached</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="p">.</span><span class="n">isKeyboardAttached</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">withName</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Tablet</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">isKeyboardAttached</span><span class="p">:</span> <span class="n">isKeyboardAttached</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">withIsKeyboardAttached</span><span class="p">(</span><span class="n">isKeyboardAttached</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Tablet</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">isKeyboardAttached</span><span class="p">:</span> <span class="n">isKeyboardAttached</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="n">fileprivate</span> <span class="kd">enum</span> <span class="nc">CodingKeys</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">CodingKey</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="n">isKeyboardAttached</span> <span class="p">=</span> <span class="s">&quot;isKeyboardAttached&quot;</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Use Generated AnyRef to Encode/Decode</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">decodedDevice</span> <span class="p">=</span> <span class="n">JsonDecoder</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="n">Device</span><span class="p">.</span><span class="n">AnyRef</span><span class="p">).</span><span class="n">value</span>
+<span class="kd">let</span> <span class="nv">encodedDevice</span> <span class="p">=</span> <span class="n">JsonEncoder</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span><span class="n">Device</span><span class="p">.</span><span class="n">AnyRef</span><span class="p">(</span><span class="n">decodedDevice</span><span class="p">))</span>
+</code></pre></div></p>
+</details>
+<h4 id="simple-objects">Simple Objects</h4>
+<p>RAML types that are "simple" objects (where no <code>properties</code> facet is defined) are mapped to Swift dictionaries (i.e. <code>[String: Any]</code>). They are generated inline and no type aliases are generated.</p>
+<details class="example"><summary>Example Simple Object Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">map</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+</code></pre></div></p>
+<p><strong>Generated Swift Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Container</span> <span class="p">:</span> <span class="n">Codable</span> <span class="p">{</span>
+
+  <span class="kd">let</span> <span class="nv">map</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Any</span><span class="p">])</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="bp">map</span> <span class="p">=</span> <span class="bp">map</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h4 id="pattern-objects">Pattern Objects</h4>
+<p>RAML types that only contain pattern properties (i.e. property names defined by regular expressions) are mapped to Swift dictionaries with the key as a string and the value as the type specified in the pattern (e.g. <code>[String: Int]</code>). They are generated inline and no type aliases are generated.</p>
+<details class="example"><summary>Example Pattern Object Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">MapOfInts</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+      <span class="l l-Scalar l-Scalar-Plain">//</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">map</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MapOfInts</span>
+</code></pre></div></p>
+<p><strong>Generated Swift Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Container</span> <span class="p">:</span> <span class="n">Codable</span> <span class="p">{</span>
+
+  <span class="kd">let</span> <span class="nv">map</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Int</span><span class="p">]</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">:</span> <span class="nb">Int</span><span class="p">])</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="bp">map</span> <span class="p">=</span> <span class="bp">map</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h3 id="arrays">Arrays</h3>
+<p>RAML array types are mapped to Swift's <code>Array</code> type. They are generated inline and no type aliases are generated.</p>
+<details class="example"><summary>Example Array Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Item</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+
+  <span class="nt">Items</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+    <span class="nt">items</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Item</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Items</span>
+</code></pre></div></p>
+<p><strong>Generated Swift Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Container</span> <span class="p">:</span> <span class="n">Codable</span> <span class="p">{</span>
+
+  <span class="kd">let</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">]</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">])</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">items</span> <span class="p">=</span> <span class="n">items</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h3 id="unions">Unions</h3>
+<p>RAML union types are mapped to the "nearest common ancestor" of all individual types in the union, if one exists, in all other cases the union is mapped to Swit's <code>Any</code> type.</p>
+<details class="example"><summary>Example Union Generation (Common Aancestor)</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">types</span><span class="p">:</span>
+
+  <span class="nt">Device</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">discriminator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+
+  <span class="nt">Phone</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">phone</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">hasGPS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
+  <span class="nt">Tablet</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Device</span>
+    <span class="nt">discriminatorValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tablet</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">isKeyboardAttached</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
+  <span class="nt">UnionOfAllDevices</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(Phone | Tablet)</span>
+
+  <span class="nt">Container</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">device</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UnionOfAllDevices</span>
+</code></pre></div></p>
+<p><strong>Generated Swift Class</strong> (simplified)
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Container</span> <span class="p">{</span>
+
+  <span class="kd">let</span> <span class="nv">device</span><span class="p">:</span> <span class="n">Device</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">device</span><span class="p">:</span> <span class="n">Device</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">device</span> <span class="p">=</span> <span class="n">device</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h2 id="generated-problem-types">Generated Problem Types</h2>
+<p>For each problem defined &amp; referenced using Sunday's Sunday's <a href="../raml-extensions/#problem-annotations">problem annotations</a>, a Swift <code>Error</code> class is generated. Generating exceptions allows servers to throw a specific problem and clients to catch specific problems.</p>
+<p>Custom properties can be defined for problem types and they are added as simple Swift properties on the generated error class.</p>
+<details class="example"><summary>Example Problem Generation</summary><p><strong>RAML Type Definition</strong>
+<div class="highlight"><pre><span></span><code><span class="err">%</span><span class="l l-Scalar l-Scalar-Plain">RAML 1.0</span>
+<span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test API</span>
+<span class="nt">uses</span><span class="p">:</span>
+    <span class="nt">sunday</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://outfoxx.github.io/sunday-generator/sunday.raml</span>
+<span class="nt">types</span><span class="p">:</span>
+
+<span class="nt">(sunday.problemTypes)</span><span class="p">:</span>
+  <span class="nt">invalid_id</span><span class="p">:</span>
+    <span class="nt">status</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">400</span>
+    <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Invalid Id</span>
+    <span class="nt">detail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The id contains one or more invalid characters</span>
+    <span class="nt">custom</span><span class="p">:</span>
+      <span class="nt">offendingId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+</code></pre></div></p>
+<p><strong>Generated Problem Error Class</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">InvalidIdProblem</span> <span class="p">:</span> <span class="n">Problem</span> <span class="p">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">let</span> <span class="nv">type</span><span class="p">:</span> <span class="n">URL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;http://example.com/invalid_id&quot;</span><span class="p">)</span><span class="o">!</span>
+  <span class="kd">public</span> <span class="kd">let</span> <span class="nv">offendingId</span><span class="p">:</span> <span class="nb">String</span>
+  <span class="kd">var</span> <span class="nv">description</span><span class="p">:</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">DescriptionBuilder</span><span class="p">(</span><span class="kc">Self</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;type&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;title&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;status&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">detail</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;detail&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;instance&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">offendingId</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="s">&quot;offendingId&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="kd">init</span><span class="p">(</span><span class="n">offendingId</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">URL</span><span class="p">?</span> <span class="p">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">offendingId</span> <span class="p">=</span> <span class="n">offendingId</span>
+    <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="kc">Self</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="s">&quot;Invalid Id&quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+        <span class="n">detail</span><span class="p">:</span> <span class="s">&quot;The id contains one or more invalid characters.&quot;</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">instance</span><span class="p">,</span>
+        <span class="n">parameters</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">required</span> <span class="kd">init</span><span class="p">(</span><span class="n">from</span> <span class="n">decoder</span><span class="p">:</span> <span class="n">Decoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">container</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">offendingId</span> <span class="p">=</span> <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="n">offendingId</span><span class="p">)</span>
+    <span class="k">try</span> <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">decoder</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kr">override</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="n">encoder</span><span class="p">:</span> <span class="n">Encoder</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="kc">super</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="n">encoder</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nv">container</span> <span class="p">=</span> <span class="n">encoder</span><span class="p">.</span><span class="n">container</span><span class="p">(</span><span class="n">keyedBy</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="kc">self</span><span class="p">)</span>
+    <span class="k">try</span> <span class="n">container</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">offendingId</span><span class="p">,</span> <span class="n">forKey</span><span class="p">:</span> <span class="n">CodingKeys</span><span class="p">.</span><span class="n">offendingId</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="n">fileprivate</span> <span class="kd">enum</span> <span class="nc">CodingKeys</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">CodingKey</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="n">offendingId</span> <span class="p">=</span> <span class="s">&quot;offending_id&quot;</span>
+
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+</details>
+<h2 id="generator-options">Generator Options</h2>
+<p>In addition to the <a href="../target-common-features/#generator-options">options supported by all code generations targets</a>, this target also supports the following options:</p>
+<dl>
+<dt><strong>Type Generation Options</strong></dt>
+<dd>
+<p>Enable/Disable Swift type generation options.</p>
+<h5 id="supported-options">Supported Options</h5>
+<dl>
+<dt><strong>Add Generated Annotation</strong></dt>
+<dd>Enables or Disables adding generation annotations to generated types</dd>
+</dl>
+<table>
+<thead>
+<tr>
+<th>CLI Option</th>
+<th>Gradle Plugin Properties</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-disable add-generation-annotation</code></td>
+<td></td>
+<td>boolean</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../kotlin-jaxrs/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              JAX-RS
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../swift-sunday/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Sunday
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 Outfox, Inc.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+  </body>
+</html>
